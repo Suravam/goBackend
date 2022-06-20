@@ -1,0 +1,7 @@
+package models
+
+type Envelope struct {
+	Name       string  `json:"name"`
+	Allocation float64 `json:"allocation"`
+	UserId     string  `json:"userid"`
+}
