@@ -1,0 +1,70 @@
+Data Structure for handling data:
+
+    Signup:
+        type user struct {
+            Name string `json:"name"` 
+            Email string `json:"email"`
+            Phone string `json:"phone"`
+        }
+    
+    Envelope:
+        type envelope struct{
+            Name string `json:"name"`
+            Allocation float64 `json:"allocation"`
+            UserId string `json:"userid"`
+        }
+    
+    Txn:
+        type txn struct {
+            TxnTime time.Time `json:"txntime"`
+            Amount float64 `json:"amount"`
+            Items string `json:"items"`
+            Merchant string `json:"merchant"`
+            UserId string `json:"userid"`
+            Envelope string `json:"envelope"`
+        }
+
+Schema Design:
+
+    UserDetail:
+    {
+        id : <>
+        name : <>
+        email : <>
+        phone : <>
+        envelopes : {
+            envelope : {
+                name: <>
+                allocation : <>
+            }
+        }
+    }
+
+    EnvelopeDetail:
+    {
+        userid : <>
+        name: <>
+        period : <>
+        allocated : <>
+        balance : <>
+        txns : {
+            txn : {
+                timestamp : <>
+                amount : <>
+                items : <>
+                merchant : <>
+            }
+        }
+    }
+
+Handlers:
+
+    1. AddUser
+    2. GetUser
+    3. RemoveUser
+    4. AddEnvelope
+    5. GetEnvelope
+    6. RemoveEnvelope
+    7. AddTxn
+    8. GetTxn
+    9. GetSummary
